@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  
+</head>
+
+<body>
+  <app-header></app-header>
+  <div id="login_box">
+    <h2>LOGIN</h2>
+    <div id="input_box">
+      <input type="text" name="userName" id="username" placeholder="请输入用户名">
+    </div>
+    <div class="input_box">
+      <input type="password" name="password" id="password" placeholder="请输入密码">
+    </div>
+    <button class="btn" (click)="check()">登录</button><br>
+    <P class="toRegister">没有账号？<span id="register" (click)="toRegister()">立即注册</span></P>
+  </div>
+</body>
+</html>
