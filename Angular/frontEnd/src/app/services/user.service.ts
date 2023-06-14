@@ -10,7 +10,13 @@ export class UserService {
     id:1,
     username:'',
     password:'',
-    model:'',
+    figure:'3',
     type:0
   }
+
+  public arr:Array<String> = new Array<String>();
+  Array = ['创建了角色，进入首页'];
+ 
+
+  
 }

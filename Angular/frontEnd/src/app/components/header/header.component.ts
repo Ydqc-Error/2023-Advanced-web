@@ -15,12 +15,17 @@ export class HeaderComponent {
     this.router.navigate(['']);
   }
   
-  
   toLogin(){
     this.router.navigate(['login']);
   }
   toRegister(){
     this.router.navigate(['register']);
+  }
+  toRoom(){
+    this.router.navigate(['room']);
+  }
+  toPerson(){
+    this.router.navigate(['person']);
   }
 
 }

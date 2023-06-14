@@ -1,6 +1,4 @@
-function chat() {
-  let username = "bbb";
-  const socket = io('ws://localhost:3000');
+function chat(username,socket) {
   const FADE_TIME = 150; // ms
   const TYPING_TIMER_LENGTH = 400; // ms
   const COLORS = [
@@ -54,12 +52,13 @@ function chat() {
 
   // Sends a chat message
   const sendMessage = () => {
-    let message = $inputMessage.val();
+    let message = " "+$inputMessage.val();
     // Prevent markup from being injected into the message
     message = cleanInput(message);
     // if there is a non-empty message and a socket connection
     if (message && connected) {
       $inputMessage.val('');
+      message=":"+message
       addChatMessage({ username, message });
       // tell server to execute 'new message' and send along one parameter
       socket.emit('new message', message);
@@ -276,4 +275,4 @@ function chat() {
     log('attempt to reconnect has failed');
   });
 
-};
+}

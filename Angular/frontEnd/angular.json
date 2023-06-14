@@ -27,9 +27,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/js/chat.js"
-            ]
+            "scripts": ["src/assets/js/chat.js"]
           },
           "configurations": {
             "production": {

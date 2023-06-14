@@ -1,23 +1,21 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  constructor(private router:Router,public http:HttpClient) {
+  constructor(private router:Router,public http:HttpClient,public user:UserService) {
   }
   postData(username:any,email:any,password:any){
     var url="http://localhost:8080/user/register";//路径待修改
-    this.http.post(url, {"username":username,"password":password,"email":email})
-    .subscribe((response)=>{
-      console.log(response);
-      if(response == 1) {
-        alert('注册成功,去登录！');
-        this.router.navigate(['login']);
-      }
+    this.http.post(url, {"username":username,"password":password,"email":email,"figure":this.user.userInfo.figure})
+    .subscribe((response:any)=>{
+      alert(response.message)
+      this.router.navigate(['login']);
     })
   }
   check(){
@@ -41,12 +39,25 @@ export class RegisterComponent {
       alert('请确认两次输入密码相同');
       return false;
     }
-    console.log(username?.value)
+
     this.postData(username?.value,email?.value,password?.value)
     return true;
   }
   toLogin(){
     this.router.navigate(['login']);
+  }
+
+  but1(){
+    this.user.userInfo.figure = 1;
+  }
+  but2(){
+    this.user.userInfo.figure = 2;
+  }
+  but3(){
+    this.user.userInfo.figure = 3;
+  }
+  but4(){
+    this.user.userInfo.figure = 4;
   }
 
 }

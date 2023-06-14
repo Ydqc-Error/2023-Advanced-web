@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { IndexComponent } from './components/index/index.component';
 import { RoomComponent } from './components/room/room.component';
 import { BookComponent } from './components/book/book.component';
+import { PersonComponent } from './components/person/person.component';
 
 
 
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path:"book",
     component:BookComponent
+  },
+  {
+    path:"person",
+    component:PersonComponent
   }
   
 ];

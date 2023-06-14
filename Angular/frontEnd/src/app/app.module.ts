@@ -13,6 +13,7 @@ import { IndexComponent } from './components/index/index.component';
 import { UserService } from './services/user.service';
 import { RoomComponent } from './components/room/room.component';
 import { BookComponent } from './components/book/book.component';
+import { PersonComponent } from './components/person/person.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { BookComponent } from './components/book/book.component';
     IndexComponent,
     RoomComponent,
     BookComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,

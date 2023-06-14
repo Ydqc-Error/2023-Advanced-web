@@ -14,13 +14,13 @@ export class IndexComponent {
   constructor(private router:Router,public user:UserService) {}
 
   toRoom(){
-    if(this.user.userInfo.type == 1){
-      this.router.navigate(['book']);
-    }
-    else{
-      alert("您还没有登录！")
-      this.router.navigate(['login']);
-    }
+     if(this.user.userInfo.type == 1){
+      this.router.navigate(['room']);
+     }
+     else{
+       alert("您还没有登录！")
+       this.router.navigate(['login']);
+     }
   
   }
 

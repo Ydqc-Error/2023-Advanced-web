@@ -17,19 +17,19 @@ export class LoginComponent {
     this.router.navigate(['register']);
   }
   postData(username:any,password:any){
-    
     var url="http://localhost:8080/user/login";//路径待修改
     this.http.post(url, {"username":username,"password":password})
     .subscribe((response:any)=>{
-      
         window.alert(response.message);
-        this.user.userInfo.username=username;
-        this.user.userInfo.model=response.model;
+        if(response.state){
+          this.user.userInfo.username=username;
+        this.user.userInfo.figure=response.figure;
         this.router.navigate(['']);
         this.user.userInfo.type = 1;
-        console.log(this.user.userInfo);
+        }
+        
+        console.log(this.user.userInfo)
     })
-    
   }
   check(){
     var username=document.getElementById("username") as HTMLInputElement | null;
