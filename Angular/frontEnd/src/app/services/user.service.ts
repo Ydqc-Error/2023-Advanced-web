@@ -8,8 +8,9 @@ export class UserService {
   constructor() { }
   public userInfo:any = {
     id:1,
-    username:'admin',
-    password:'666666',
+    username:'',
+    password:'',
+    model:'',
     type:0
   }
 }

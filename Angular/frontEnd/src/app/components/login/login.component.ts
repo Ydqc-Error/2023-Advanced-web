@@ -17,19 +17,19 @@ export class LoginComponent {
     this.router.navigate(['register']);
   }
   postData(username:any,password:any){
+    
     var url="http://localhost:8080/user/login";//路径待修改
     this.http.post(url, {"username":username,"password":password})
-    .subscribe((response)=>{
-      console.log(response);
-      if(response == 1){
-        alert("登录成功！")
+    .subscribe((response:any)=>{
+      
+        window.alert(response.message);
+        this.user.userInfo.username=username;
+        this.user.userInfo.model=response.model;
         this.router.navigate(['']);
         this.user.userInfo.type = 1;
-      }
-      else {
-        alert("用户名或密码错误,请重新输入！")
-      }
+        console.log(this.user.userInfo);
     })
+    
   }
   check(){
     var username=document.getElementById("username") as HTMLInputElement | null;
